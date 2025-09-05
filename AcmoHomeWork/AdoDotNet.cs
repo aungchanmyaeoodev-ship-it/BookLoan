@@ -34,7 +34,7 @@ namespace AcmoHomeWork
   FROM [dbo].[book]
 ";
                 SqlCommand cmd = new SqlCommand(queryRead, con);
-                SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable tb = new DataTable();
                 adapter.Fill(tb);
             }
@@ -89,7 +89,7 @@ namespace AcmoHomeWork
             {
                 con.Open();
                 string queryDelete = @"UPDATE [dbo].[book]
-   SET[DeleteFlag] = 'Regular Customer'
+   SET[DeleteFlag] = 0
       
  WHERE [LoanId] = 5";
 

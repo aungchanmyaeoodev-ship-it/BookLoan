@@ -1,20 +1,17 @@
 ﻿// See https://aka.ms/new-console-template for more information
-//Console.WriteLine("Hello, World!");
+using EFCore.ConsoleApp;
+Console.WriteLine("Hello, World!");
 
-using Dapper.ConsoleApp;
-
-DapperService dap = new DapperService();
+EFCoreService ef = new EFCoreService();
 
 Console.WriteLine("===Read===");
-dap.Read();
+ef.Read();
 
 Console.WriteLine("===Create===");
-dap.Create();
+ef.Create();
 
 Console.WriteLine("===Update===");
-dap.Update();
+ef.Update();
 
 Console.WriteLine("===Delete===");
-dap.Delete();
-
-Console.ReadLine();
+ef.Delete();
